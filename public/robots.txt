@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://domainmu.com/sitemap.xml
+Sitemap: https://https://portfolio-wahyucandrautama.vercel.app/sitemap.xml
