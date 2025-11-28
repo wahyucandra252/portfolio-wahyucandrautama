@@ -16,15 +16,14 @@ const Navbar = () => {
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+    element?.scrollIntoView();
     setActiveSection(id);
     setIsOpen(false);
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/60 backdrop-blur-xl border-b border-gray-200 z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-16 px-4 transition-all">
-        {/* ====== LOGO (ganti sesuai nama kamu) ====== */}
+    <nav className="fixed top-0 w-full bg-white/60 backdrop-blur-xl border-b border-gray-200 z-50 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto w-full flex justify-between items-center h-16 px-4 transition-all overflow-x-hidden">
         <div
           className="text-2xl font-extrabold tracking-wide text-blue-900"
           style={{
