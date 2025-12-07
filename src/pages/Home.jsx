@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ArrowRight, Mail, Github, Linkedin, Code2 } from "lucide-react";
 
 const PROFILE_IMAGE_URL = "/portfolio/wahyu.png";
 
@@ -14,19 +15,22 @@ const Home = () => {
     AOS.init({
       duration: 1000,
       once: true,
-      easing: "ease-out",
-      offset: 80,
+      easing: "ease-out-cubic",
+      offset: 50,
     });
   }, []);
 
-  // Typing effect for description
+  // Typing effect
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
-      setDisplayName(typingText.substring(0, index));
-      index++;
-      if (index > typingText.length) clearInterval(interval);
-    }, 45);
+      if (index <= typingText.length) {
+        setDisplayName(typingText.substring(0, index));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 30);
 
     return () => clearInterval(interval);
   }, []);
@@ -34,48 +38,57 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center relative overflow-hidden py-12 sm:py-16 lg:py-20"
+      className="scroll-mt-20 relative min-h-screen flex items-center overflow-hidden bg-slate-50 py-12 sm:py-20"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 z-20 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+      {/* Background Modern Blobs */}
+      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+      <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 z-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* LEFT COLUMN */}
-          <div className="text-left order-2 md:order-1 max-w-xl mx-auto md:mx-0">
+          <div className="text-left order-2 lg:order-1 flex flex-col justify-center">
             <div data-aos="fade-right" data-aos-delay="100">
-              <h1
-                className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black text-blue-900 leading-[1.15] mb-4"
-                style={{
-                  fontFamily: 'Impact, "Arial Black", sans-serif',
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                WAHYU CANDRA UTAMA
-              </h1>
+              <h5 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-2">
+                Halo, Saya <br />
+                <span
+                  className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 
+                 bg-300% animate-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold"
+                >
+                  WAHYU CANDRA UTAMA
+                </span>
+              </h5>
             </div>
 
             <div
               data-aos="fade-right"
               data-aos-delay="200"
-              className="mb-4 sm:mb-6"
+              className="mb-6 flex items-center gap-3"
             >
-              <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-blue-900 uppercase tracking-wide">
+              <Code2 className="w-6 h-6 text-cyan-600" />
+              <h2 className="text-lg sm:text-xl md:text-2xl font-mono font-bold text-slate-600">
                 SOFTWARE & WEB DEVELOPER
               </h2>
             </div>
 
-            {/* DESCRIPTION TYPING */}
-            <p
+            {/* Description */}
+            <div
               data-aos="fade-right"
               data-aos-delay="300"
-              className="text-sm sm:text-base md:text-lg text-blue-900 leading-relaxed mb-6 sm:mb-8 text-justify"
-              style={{ fontFamily: "Georgia, serif" }}
+              className="h-auto min-h-[80px] mb-8"
             >
-              {displayName}
-            </p>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl text-justify">
+                {displayName}
+                <span className="animate-pulse text-blue-600 font-bold">|</span>
+              </p>
+            </div>
 
+            {/* Buttons */}
             <div
               data-aos="fade-up"
               data-aos-delay="400"
-              className="flex flex-col sm:flex-row md:justify-start gap-4"
+              className="flex flex-col sm:flex-row gap-4 mt-4"
             >
               <button
                 onClick={() =>
@@ -83,41 +96,114 @@ const Home = () => {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="group px-8 py-4 bg-blue-600 text-white rounded-xl shadow-lg hover:shadow-2xl hover:bg-blue-700 transition-all duration-300 font-bold text-base flex items-center justify-center gap-2 transform hover:scale-105 hover:-translate-y-1"
+                className="group relative px-8 py-4 bg-blue-600 text-white rounded-xl overflow-hidden shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/50"
               >
-                Hubungi Saya
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+                <span className="relative flex items-center justify-center gap-2 font-bold">
+                  Hubungi Saya <Mail className="w-4 h-4" />
+                </span>
               </button>
+
               <button
                 onClick={() =>
                   document
                     .getElementById("projects")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="group px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold text-base flex items-center justify-center gap-2 shadow-md hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+                className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl hover:border-blue-500 hover:text-blue-600 transition-all duration-300 font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
               >
-                Lihat Proyek
+                Lihat Proyek{" "}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="relative flex justify-center md:justify-end order-1 md:order-2 mt-8 md:mt-0">
+          {/* RIGHT COLUMN (IMAGE) */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative mt-10 md:mt-0">
             <div
               data-aos="fade-left"
-              data-aos-delay="300"
-              className="relative z-10 w-full flex justify-center md:justify-end"
+              data-aos-duration="1200"
+              className="relative z-10 flex justify-center md:justify-end animate-float"
             >
               <div className="relative inline-block">
+                {/* IMAGE */}
                 <img
-                  className="relative w-[260px] sm:w-[320px] md:w-[360px] lg:w-[480px] h-auto object-cover z-10 transition-transform duration-300 hover:scale-110"
+                  className="
+                    relative 
+                    w-[220px] sm:w-[260px] md:w-[320px] lg:w-[420px] xl:w-[480px]
+                    h-auto
+                    object-cover 
+                    z-10 
+                    transition-transform duration-300 hover:scale-105 
+                    drop-shadow-2xl
+                  "
                   src={PROFILE_IMAGE_URL}
-                  alt="Profile Picture"
+                  alt="Wahyu Candra Utama"
                 />
+
+                {/* GLOW */}
+                <div
+                  className="
+                  absolute 
+                  -inset-6 
+                  bg-gradient-to-r 
+                  from-blue-500 
+                  to-purple-500 
+                  opacity-25 
+                  blur-3xl 
+                  -z-10 
+                  rounded-full
+                "
+                ></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* --- CSS Animations replaces styled-jsx --- */}
+      <style>{`
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+
+        @keyframes shimmer {
+          100% { transform: translateX(100%); }
+        }
+
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+
+        .bg-300% { background-size: 300% 300%; }
+
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        .animate-gradient { animation: gradient 6s ease infinite; }
+      `}</style>
     </section>
   );
 };

@@ -88,15 +88,18 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-to-b from-gray-50 to-white"
+      className="scroll-mt-20 py-20 bg-gradient-to-b from-gray-50 to-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16" data-aos="fade-down">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16 md:mb-20" data-aos="fade-down">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Keterampilan
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {" "}
+              Saya
+            </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
             Teknologi dan tools yang saya kuasai dalam pengembangan software
           </p>
         </div>
@@ -171,6 +174,7 @@ const Skills = () => {
             <div className="bg-blue-100 rounded-xl p-4 shadow-inner">
               <Award className="text-blue-600" size={34} strokeWidth={2} />
             </div>
+
             <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 ml-4 tracking-tight">
               Pencapaian & Sertifikasi
             </h3>

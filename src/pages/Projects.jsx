@@ -88,7 +88,7 @@ const Project = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="scroll-mt-20 py-20 bg-gray-50">
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -96,20 +96,18 @@ const Project = () => {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          className="text-4xl font-bold text-center text-gray-900 mb-4"
-          data-aos="fade-up"
-        >
-          Proyek
-        </h2>
-
-        <p
-          className="text-center text-gray-600 mb-8 max-w-2xl mx-auto"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          Berikut adalah beberapa proyek yang telah dikerjakan
-        </p>
+        <div className="text-center mb-16 md:mb-20" data-aos="fade-down">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            Proyek
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {" "}
+              Saya
+            </span>
+          </h2>
+          <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
+            Berikut adalah beberapa proyek yang telah dikerjakan
+          </p>
+        </div>
 
         {/* MOBILE */}
         <div

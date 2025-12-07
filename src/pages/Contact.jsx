@@ -3,24 +3,26 @@ import { Mail, Phone, Linkedin } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-white" data-aos="fade-up">
+    <section
+      id="contact"
+      className="scroll-mt-20 py-24 bg-white"
+      data-aos="fade-up"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title Section */}
-        <h2
-          className="text-4xl font-extrabold text-center text-gray-900 mb-4 tracking-tight"
-          data-aos="fade-down"
-        >
-          Hubungi Saya
-        </h2>
-
-        <p
-          className="text-center text-gray-600 mb-16 max-w-2xl mx-auto text-lg"
-          data-aos="fade-up"
-          data-aos-delay="150"
-        >
-          Tertarik untuk berkolaborasi atau ingin mendiskusikan proyek? Jangan
-          ragu untuk menghubungi saya.
-        </p>
+        <div className="text-center mb-16 md:mb-20" data-aos="fade-down">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-4 border border-gray-200/50 shadow-sm"></div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            Hubungi
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {" "}
+              Saya
+            </span>
+          </h2>
+          <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
+            Tertarik untuk berkolaborasi atau ingin mendiskusikan proyek? Jangan
+            ragu untuk menghubungi saya.
+          </p>
+        </div>
 
         {/* Contact Cards */}
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">

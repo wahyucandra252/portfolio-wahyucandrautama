@@ -151,7 +151,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-24 md:py-32 bg-slate-50 relative overflow-hidden"
+      className="scroll-mt-20 py-24 md:py-32 bg-slate-50 relative overflow-hidden"
     >
       {/* ORBS — blur dikurangi */}
       <div className="absolute inset-0 -z-10">
@@ -194,11 +194,15 @@ const About = () => {
       <ParticleCanvas />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div data-aos="fade-down">
-          <h2 className="text-5xl font-extrabold text-center text-gray-900 mb-4 tracking-tighter">
-            Tentang Saya
+        <div className="text-center mb-16 md:mb-20" data-aos="fade-down">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            Tentang
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {" "}
+              Saya
+            </span>
           </h2>
-          <p className="text-center text-xl text-gray-500 mb-16 max-w-2xl mx-auto">
+          <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
             Latar belakang akademis dan fokus profesional saya.
           </p>
         </div>
