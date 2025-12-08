@@ -92,7 +92,7 @@ const Project = () => {
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .touch-pan-x { touch-action: pan-x; -webkit-overflow-scrolling: touch; }
+        .touch-pan-x { touch-action: pan-x pan-y;-webkit-overflow-scrolling: touch;}
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
