@@ -45,6 +45,15 @@ export const projects = [
     category: "Automation",
     image: "/portfolio/visualisasi.png",
   },
+  {
+    id: 5,
+    title: "Aplikasi Point Of Sale Toko Indo Manna",
+    description: "Aplikasi POS untuk Toko Indo Manna Dalam Mengelola Penjualan",
+    tech: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+    year: "2026",
+    category: "Web Development",
+    image: "/portfolio/indomanna.png",
+  },
 ];
 
 export const experiences = [
@@ -103,6 +112,20 @@ export const experiences = [
       "Membuat SOP aplikasi",
       "Membuat UI mockup/prototype",
       "Troubleshooting error aplikasi",
+    ],
+  },
+  {
+    company: "PT Inova Medika Solusindo",
+    position: "Web Programmer",
+    period: "Des 2025 - Juni 2026",
+    location: "Bandung",
+    logo: "/portfolio/inova.png",
+    description: "Jasa Konsultasi Teknologi Informasi Di Bidang Kesehatan ",
+    responsibilities: [
+      "Pengembangan Alur Aplikasi IKlinik",
+      "Pengembangan Backend Aplikasi IKlinik",
+      "Pengembangan Desain Figma Aplikasi IKlinik",
+      "Documentation API",
     ],
   },
 ];

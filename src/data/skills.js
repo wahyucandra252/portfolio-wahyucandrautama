@@ -59,4 +59,19 @@ export const skills = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     category: "Design",
   },
+  {
+    name: "Swagger",
+    logo: "https://phauer.com/blog/2015/0728-enriching-restful-services-swagger/swagger-logo-300x239.png",
+    category: "Documentation API",
+  },
+  {
+    name: "PosgtgreSQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    category: "Database",
+  },
+  {
+    name: "Postman",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+    category: "Testing API",
+  },
 ];
